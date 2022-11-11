@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './index.css'
 // reactDom is used to inject your JavaScript into the index.html file
 //that will be displayed on the web page
 // function Greeting() {
@@ -40,7 +41,10 @@ const Book = () => {
 }
 
 const Image = () => (
-  <img src='C:\Users\Maria\Desktop\rainbow-love-heart.jpg' alt='heart img' />
+  <img
+    src='https://img.freepik.com/free-vector/luxury-bar-logo-template-with-minimal-cocktail-glass-illustration_53876-117514.jpg?w=740&t=st=1667760598~exp=1667761198~hmac=fb1323047e65370c96337877dc863b55c25243a199ca33b1874b53b773f267f8'
+    alt='img '
+  />
 )
 
 const Title = () => <h1>My first component in react</h1>
