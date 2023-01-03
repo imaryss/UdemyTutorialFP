@@ -16,5 +16,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.cursorBlinking": "expand",
-  "window.zoomLevel": 2
+  "window.zoomLevel": 1
 }

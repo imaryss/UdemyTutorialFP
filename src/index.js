@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 // reactDom is used to inject your JavaScript into the index.html file
 //that will be displayed on the web page
 // function Greeting() {
@@ -22,37 +22,78 @@ import './index.css'
 //we are passing two things: whatever we are going to render
 // and the where we are going to render
 //*Book component example
+// function BookList() {
+//   return (
+//     <section className="booklist">
+//       <Book />
+//       <Book />
+//       <Book />
+//       <Book />
+//       <Book />
+//       <Book />
+//     </section>
+//   );
+// }
+
+// const Book = () => {
+//   return (
+//     <article className="book">
+//       <Image></Image>
+//       <Title></Title>
+//       <Author></Author>
+//     </article>
+//   );
+// };
+
+// const Image = () => <img src="./images/book1.jpg" alt="Atomic Habits " />;
+
+// const Title = () => <h1>Atomic Habits</h1>;
+// const Author = () => <h5>James Clear</h5>;
+
+//*JSX way to write components in react
 function BookList() {
   return (
-    <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+    <section className="booklist">
+      <Book1 job="developer" />
+      <Book2 title="random title" number={22} />
     </section>
-  )
+  );
 }
 
-const Book = () => {
+const Book1 = (props) => {
+  console.log(props);
+  const title = "Atomic Habits";
+  const author = "James Clear";
+  const img = "./images/book1.jpg";
   return (
-    <article className='book'>
-      <Image></Image>
-      <Title></Title>
-      <Author></Author>
+    <article className="book">
+      <img src={img} alt="title" />
+      <h2>{title}</h2>
+      <h4>{author.toLocaleUpperCase()}</h4>
+      <p>{props.title}</p>
+      <p>{props.job}</p>
+      <p>{props.number}</p>
     </article>
-  )
-}
+  );
+};
 
-const Image = () => (
-  <img
-    src='https://img.freepik.com/free-vector/luxury-bar-logo-template-with-minimal-cocktail-glass-illustration_53876-117514.jpg?w=740&t=st=1667760598~exp=1667761198~hmac=fb1323047e65370c96337877dc863b55c25243a199ca33b1874b53b773f267f8'
-    alt='img '
-  />
-)
+const Book2 = (props) => {
+  console.log(props);
+  const title = "Prince Harry The Duke of Sussex";
+  const author = "Prince Harry";
+  return (
+    <div className="book">
+      <img src="./images/book2.jpg" alt="Prince Harry" />
+      <h2>{title}</h2>
+      <h4>{author.toLocaleUpperCase()}</h4>
+    </div>
+  );
+};
+//*parameters
+const someFunc = (param1, param2) => {
+  console.log(param1, param2);
+};
+//*arguments
+someFunc("job", "developer");
 
-const Title = () => <h1>My first component in react</h1>
-const Author = () => <h5>Mariana Ion</h5>
-ReactDOM.render(<BookList />, document.getElementById('root'))
+ReactDOM.render(<BookList />, document.getElementById("root"));
